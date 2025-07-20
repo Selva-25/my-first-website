@@ -1,127 +1,125 @@
-body {
+* {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    overflow: hidden; /* Prevent scrollbar from image overflow */
-}
-
-.hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f8f8f8; /* Light background for the overall section */
-}
-
-.hero-content {
-    flex: 1;
-    padding: 0 5%; /* Adjust padding as needed */
-    max-width: 50%; /* Control the width of the content section */
+    padding: 0;
     box-sizing: border-box;
 }
 
-.hero-content h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5em; /* Adjust font size for "I am a Designer" */
+body,
+html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.image-section {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right text section */
+.text-section {
+    width: 60%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #111;
+    background-color: white;
+}
+
+.intro {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.name {
+    font-size: 48px;
     font-weight: 700;
-    line-height: 1.1;
     margin-bottom: 20px;
 }
 
-.hero-content p {
-    font-size: 1.1em;
+/* Small divider image */
+.divider-image {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.divider-image img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* About text */
+.about {
+    font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 30px;
+    color: #444;
 }
 
-.hero-content p a {
-    color: #007bff; /* Link color, similar to the sample */
-    text-decoration: none;
-    font-weight: 700;
-}
 
-.hero-content p a:hover {
-    text-decoration: underline;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border: 1px solid #333;
-    color: #333;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.9em;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* Align image to the right */
-    align-items: center;
-    overflow: hidden; /* Ensure image doesn't overflow its container */
-}
-
-.hero-image img {
-    max-width: 100%; /* Ensure image scales within its container */
-    height: auto;
-    display: block;
-    object-fit: cover; /* Cover the area, cropping if necessary */
-    max-height: 100vh; /* Make sure image doesn't go beyond viewport height */
-    filter: grayscale(100%); /* Apply grayscale effect as in the image */
-}
-
-/* Optional: Add a subtle icon to the button, similar to the sample */
-.btn::after {
-    content: '\2192'; /* Unicode arrow right */
-    margin-left: 8px;
-    vertical-align: middle;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .hero-section {
-        flex-direction: column; /* Stack elements on smaller screens */
-    }
-
-    .hero-content {
-        max-width: 90%;
-        text-align: center;
-        padding: 50px 5%;
-    }
-
-    .hero-content h1 {
-        font-size: 3.5em;
-    }
-
-    .hero-image {
-        width: 100%;
-        justify-content: center;
-        padding-bottom: 50px; /* Add some space below the image */
-    }
-
-    .hero-image img {
-        max-width: 80%; /* Adjust image size on smaller screens */
-    }
-}
-
+/* mobile version */
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.8em;
+    .main-container {
+        flex-direction: column;
+        align-items: center;
     }
-    .hero-content p {
-        font-size: 1em;
+
+    .image-section {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
     }
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.8em;
+
+    .image-section img {
+        width: 160px;
+        /* 👈 Medium size */
+        height: 160px;
+        object-fit: cover;
+        /* 👈 Crop inside circle */
+        border-radius: 50%;
+        /* 👈 Circle profile pic look */
+    }
+
+    .text-section {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .divider-image{
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .about {
+        font-size: 15px;
+    }
+
+    .divider-image img {
+        width: 40px;
+        height: 40px;
     }
 }
